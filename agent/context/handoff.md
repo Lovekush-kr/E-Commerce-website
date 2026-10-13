@@ -1,13 +1,20 @@
 # Session Handoff
 
 ## Current status
-Phase 4 (Cart and Checkout) is complete. The application features a persistent cart powered by the React Context API and `localStorage`, an instant real-time cart badge in the Navbar, a fully interactive Cart page with item quantity steppers and subtotal calculations, and a validated Checkout page with an order summary, clear form validation error messages, order confirmation screen with a generated reference number, and automatic cart clearing upon order completion. All lint checks and production builds passed with 0 errors.
+Phase 4 (Cart and Checkout) remains complete. The current task added a responsive three-slide Home carousel, refined the Home heading, and added a persistent navbar theme toggle with coordinated light and dark tokens. Current `npm run lint` and `npm run build` both passed.
 
 ## Current phase
-Phase 4 completed; Ready for Phase 5 upon user approval.
+Phase 5 is in progress. Theme and Home promotional polish are complete; recently viewed products and review sorting/filtering remain.
 
 ## Last completed task
-Implemented Phase 4:
+Implemented the requested carousel, theme toggle, and Home heading polish:
+- Added a three-slide Home carousel that selects actual API products across groceries/fruit, home furnishings, and tech, with the existing local hero asset as a fallback. It has catalog/category CTAs, previous/next arrows, pagination dots, 4.5-second autoplay, hover/focus pause, interval cleanup/reset, and reduced-motion support.
+- Added the thinner responsive Home heading and rose-pink emphasis.
+- Added navbar theme switching, `aura_luxe_theme` LocalStorage persistence, and a small inline theme restore in `index.html` to avoid a flash on refresh.
+- Added light palette overrides through global design tokens, keeping dark mode as the default and preserving the existing dark identity.
+- Updated the design token and project state notes. `npm run lint` and `npm run build` passed for this task.
+
+Earlier Phase 4 implementation:
 - Created [`CartContext.jsx`](file:///C:/Users/91959/OneDrive/Desktop/task04-e.comm/e-commerce/src/context/CartContext.jsx) with `CartProvider` and `useCart()` hook, handling `cartItems`, `addToCart`, `removeFromCart`, `updateQuantity`, `clearCart`, `totalItems`, and `subtotal` with safe `localStorage` synchronization.
 - Wrapped application with `CartProvider` in [`App.jsx`](file:///C:/Users/91959/OneDrive/Desktop/task04-e.comm/e-commerce/src/App.jsx).
 - Updated [`Navbar.jsx`](file:///C:/Users/91959/OneDrive/Desktop/task04-e.comm/e-commerce/src/components/layout/Navbar.jsx) to display the live `totalItems` count on both desktop and mobile navigation badges.
@@ -17,7 +24,7 @@ Implemented Phase 4:
 - Verified with `npm run lint` (0 errors), `npm run build` (0 errors), Node logic test, and preview server checks on `/`, `/cart`, and `/checkout`.
 
 ## In progress
-Stopped at Phase 4 completion boundary. Awaiting user approval before beginning Phase 5.
+No implementation is currently in progress. The carousel, theme toggle, and Home heading are complete; the remaining Phase 5 tasks are recently viewed products and product review sorting/filtering.
 
 ## Files changed in the latest task
 - `src/context/CartContext.jsx`
@@ -28,17 +35,18 @@ Stopped at Phase 4 completion boundary. Awaiting user approval before beginning 
 - `src/pages/CheckoutPage.jsx` & `src/pages/CheckoutPage.css`
 - `agent/context/current-state.md`
 - `agent/context/handoff.md`
+- `src/pages/HomePage.jsx` & `src/pages/HomePage.css`
+- `src/components/layout/Navbar.jsx` & `src/components/layout/Navbar.css`
+- `src/index.css`
+- `index.html`
+- `agent/context/design-tokens.md`
 
 ## Known issues and notes
 - Everything builds and lints cleanly with zero errors and zero warnings.
 - Demo checkout explicitly marks orders as prototype simulations without charging or shipping physical items.
 
 ## Next action
-Once approved, proceed to Phase 5:
-1. Implement "Recently Viewed Products" feature using `localStorage` tracking.
-2. Build mock authentication UI (Sign In / User profile state in Navbar).
-3. Enhance product reviews on the details page with sorting/filtering.
-4. Optional theme toggle or subtle visual polish.
+Continue Phase 5 with recently viewed products and review sorting/filtering, after inspecting their existing page flows.
 
 ## Resume instructions
 Read `handoff.md`, `current-state.md`, `rules.md`, `design-tokens.md`, and `tech-stack.md`. Ensure working directory is set to `e-commerce/`. Begin Phase 5 implementation.

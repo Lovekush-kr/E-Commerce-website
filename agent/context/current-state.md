@@ -15,13 +15,13 @@
 - [x] Core catalog and browsing features implemented (Phase 2 complete).
 - [x] Product details and shopping controls implemented (Phase 3 complete).
 - [x] Cart, LocalStorage persistence, and demo checkout implemented (Phase 4 complete).
-- [ ] Enhancements and mock extras: recently viewed, mock auth UI, reviews filter, optional theme toggle (Phase 5 pending).
+- [ ] Phase 5 enhancements: recently viewed and review sorting/filtering remain pending; mock auth UI exists, and the theme toggle plus Home promotional carousel are complete.
 - [ ] Responsive and functional QA completed (Phase 6 pending).
 - [x] Production build verified.
 
 ## Development phase
 **Phase 4 — Cart and Checkout** (completed).
-**Next up:** Phase 5 — Enhancements: recently viewed, mock auth UI, and Polish.
+**Phase 5 progress:** Theme toggle, responsive promotional carousel, and refined Home heading implemented. Recently viewed and review sorting/filtering remain.
 
 ## Phase tracker
 - [x] Phase 0: Inspect repository, package.json, entry points, and product API.
@@ -29,7 +29,7 @@
 - [x] Phase 2: Home page, categories, product grid, search, filters, sorting.
 - [x] Phase 3: Product details and Buy Now.
 - [x] Phase 4: Cart, checkout, Context API, LocalStorage persistence, order confirmation.
-- [ ] Phase 5: Recently viewed items, mock authentication UI, reviews enhancements, theme toggle.
+- [ ] Phase 5: Recently viewed items and review enhancements pending; mock auth UI exists; theme toggle and promotional carousel complete.
 - [ ] Phase 6: Final responsive QA, cross-flow checks, production build verification.
 
 ## Repository and file structure
@@ -127,7 +127,14 @@ e-commerce/
   - On valid submission: generates unique reference order ID (`#AURA-YYYY-XXXX`), captures snapshot of ordered items and customer data, displays Order Confirmation screen, and clears the cart.
   - Empty cart guard screen preventing checkout without items.
 
+### Implemented in current task:
+- Added a three-slide Home promotional carousel with diverse products selected from the full existing API response: fruit/groceries, home furnishings, and tech. It uses real product thumbnails, a local hero asset fallback, catalog/category links, arrow and dot navigation, 4.5-second autoplay, pause on hover/focus, timer cleanup/reset, and reduced-motion support.
+- Added a responsive Home intro heading with lighter weight, refined tracking, and rose accent.
+- Added a navbar theme toggle. The current theme is stored as `aura_luxe_theme`; dark remains the default. An inline head script restores the saved theme before the app paints.
+- Added light-mode design tokens and light surface styling while retaining the existing dark plum and purple palette.
+
 ## Verification log
+- Current task: `npm run lint` exited code 0 with no diagnostics; `npm run build` exited code 0 (54 modules transformed, built in 686ms).
 - `npm run lint`: Exited code 0 (zero errors, zero warnings).
 - `npm run build`: Exited code 0 (built client bundle in 452ms, 50 modules transformed).
 - Node cart logic verification: Passed (add, quantity capping by stock, subtotal calculation).
@@ -137,8 +144,4 @@ e-commerce/
 - None. Phase 4 fully verified.
 
 ## Next exact action
-Await user approval, then proceed to Phase 5:
-1. Implement "Recently Viewed Products" feature using LocalStorage tracking.
-2. Build mock authentication modal/drawer (Sign In / Sign Out demo state in Navbar).
-3. Add customer review sorting/filtering on product details.
-4. Optional theme toggle or subtle visual polish.
+Continue Phase 5 by implementing recently viewed products and review sorting/filtering, after inspecting their existing page flows.

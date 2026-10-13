@@ -22,6 +22,24 @@ Create a premium, modern dark e-commerce experience inspired by the supplied ref
 
 The two required brand colors must not change: Tyrian purple `#66023C` and ruby `#E0115F`. If a color needs adjustment for contrast, add a new documented token instead of silently changing these values.
 
+## Light theme palette
+
+The navbar theme toggle stores `aura_luxe_theme` in LocalStorage. With `data-theme="light"`, the global tokens use this coordinated warm palette:
+
+| Token | Value | Intended use |
+|---|---|---|
+| Main background | `#FAF7F8` | Page canvas |
+| Main surface | `#FFFDFE` | Cards, navbar, controls |
+| Raised surface | `#F7E8EF` | Secondary sections and raised controls |
+| Border | `#E8CAD8` | Dividers and outlines |
+| Theme-aware accent | `#D63384` | Selected states and links (`--color-accent`) |
+| Theme-aware strong accent | `#AD285F` | High emphasis actions (`--color-accent-strong`) |
+| Main text | `#34232D` | Headings and body text |
+| Secondary text | `#786572` | Supporting copy |
+| Promotional gradient | `#F8DCE8` to `#EFB9D0` | Home carousel surfaces |
+
+Dark mode remains the default and retains the original dark plum, Tyrian purple, and ruby palette. The canonical `--color-ruby` (`#E0115F`) and `--color-tyrian` (`#66023C`) values remain unchanged; theme-aware accent aliases provide the lighter pink shades in light mode. Button text uses a separate accent-text token so theme text colors do not reduce contrast on filled buttons.
+
 ## CSS custom properties
 Declare shared tokens in one global stylesheet, normally `src/index.css` or the existing global CSS file after repository inspection.
 

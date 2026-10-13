@@ -55,7 +55,7 @@ function Footer() {
             &copy; {currentYear} AURA LUXE. All rights reserved.
           </p>
           <p className="footer-notice">
-            Designed with Tyrian Purple & Ruby.
+            Designed with considered details.
           </p>
         </div>
       </div>

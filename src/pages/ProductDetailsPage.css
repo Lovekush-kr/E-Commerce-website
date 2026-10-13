@@ -46,11 +46,11 @@
 }
 
 .breadcrumbs-list a:hover {
-  color: var(--color-ruby);
+  color: var(--color-accent);
 }
 
 .crumb-sep {
-  color: rgba(184, 174, 181, 0.4);
+  color: rgba(161, 161, 170, 0.4);
   font-size: 0.8rem;
 }
 
@@ -96,7 +96,7 @@
   position: relative;
   width: 100%;
   padding-top: 100%; /* 1:1 Aspect ratio */
-  background-color: rgba(9, 5, 9, 0.85);
+  background-color: rgba(16, 17, 20, 0.85);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -152,7 +152,7 @@
 }
 
 .thumb-btn.thumb-active {
-  border-color: var(--color-ruby);
+  border-color: var(--color-accent);
   transform: scale(1.05);
 }
 
@@ -218,7 +218,7 @@
 }
 
 .star-icon {
-  color: #ffd166;
+  color: var(--color-accent);
 }
 
 .rating-num {
@@ -241,9 +241,9 @@
 }
 
 .stock-status-pill.out-of-stock {
-  background-color: rgba(255, 107, 131, 0.15);
+  background-color: rgba(161, 161, 170, 0.15);
   color: var(--color-error);
-  border-color: rgba(255, 107, 131, 0.4);
+  border-color: rgba(161, 161, 170, 0.4);
 }
 
 /* Pricing Card */
@@ -272,13 +272,13 @@
 }
 
 .savings-chip {
-  background-color: rgba(224, 17, 95, 0.2);
-  color: var(--color-ruby);
+  background-color: rgba(166, 138, 100, 0.2);
+  color: var(--color-accent);
   font-size: 0.85rem;
   font-weight: 600;
   padding: 3px 8px;
   border-radius: var(--radius-sm);
-  border: 1px solid rgba(224, 17, 95, 0.4);
+  border: 1px solid rgba(166, 138, 100, 0.4);
 }
 
 .min-order-note {
@@ -350,7 +350,7 @@
 }
 
 .stepper-btn:hover:not(:disabled) {
-  background-color: var(--color-tyrian);
+  background-color: var(--color-accent-strong);
 }
 
 .stepper-btn:disabled {
@@ -397,7 +397,7 @@
 }
 
 .buy-now-btn {
-  box-shadow: 0 4px 14px rgba(224, 17, 95, 0.3);
+  box-shadow: 0 4px 14px rgba(166, 138, 100, 0.3);
 }
 
 /* Feedback Box */
@@ -467,10 +467,10 @@
   display: flex;
   flex-direction: column;
   gap: 2px;
-  background-color: rgba(9, 5, 9, 0.5);
+  background-color: rgba(16, 17, 20, 0.5);
   padding: var(--space-sm) var(--space-md);
   border-radius: var(--radius-sm);
-  border: 1px solid rgba(69, 32, 53, 0.5);
+  border: 1px solid rgba(48, 49, 54, 0.5);
 }
 
 .spec-label {
@@ -578,7 +578,7 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-tyrian), var(--color-ruby));
+  background: linear-gradient(135deg, var(--color-accent-strong), var(--color-accent));
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -605,11 +605,11 @@
 }
 
 .star-filled {
-  color: #ffd166;
+  color: var(--color-accent);
 }
 
 .star-empty {
-  color: rgba(184, 174, 181, 0.3);
+  color: rgba(161, 161, 170, 0.3);
 }
 
 .review-comment {

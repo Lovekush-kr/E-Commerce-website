@@ -13,14 +13,14 @@
 .product-card:hover {
   transform: translateY(-4px);
   border-color: var(--color-magenta);
-  box-shadow: 0 8px 24px rgba(102, 2, 60, 0.25);
+  box-shadow: 0 8px 24px rgba(48, 49, 54, 0.25);
 }
 
 .card-image-wrap {
   position: relative;
   width: 100%;
   padding-top: 85%; /* Aspect ratio */
-  background-color: rgba(9, 5, 9, 0.8);
+  background-color: rgba(16, 17, 20, 0.8);
   overflow: hidden;
   border-bottom: 1px solid var(--color-border);
 }
@@ -52,8 +52,8 @@
   position: absolute;
   top: var(--space-sm);
   left: var(--space-sm);
-  background-color: var(--color-ruby);
-  color: #ffffff;
+  background-color: var(--color-accent);
+  color: var(--color-accent-ink);
   font-size: 0.75rem;
   font-weight: 700;
   padding: 3px 8px;
@@ -93,11 +93,11 @@
   gap: 3px;
   font-size: 0.8rem;
   font-weight: 600;
-  color: #ffd166;
+  color: var(--color-accent);
 }
 
 .rating-star {
-  color: #ffd166;
+  color: var(--color-accent);
 }
 
 .rating-score {
@@ -122,7 +122,7 @@
 }
 
 .card-title a:hover {
-  color: var(--color-ruby);
+  color: var(--color-accent);
 }
 
 .card-brand {

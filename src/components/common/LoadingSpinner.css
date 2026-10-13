@@ -8,8 +8,8 @@
 }
 
 .spinner-circle {
-  border: 3px solid rgba(102, 2, 60, 0.3);
-  border-top-color: var(--color-ruby);
+  border: 3px solid rgba(48, 49, 54, 0.3);
+  border-top-color: var(--color-accent);
   border-radius: 50%;
   animation: spin 800ms linear infinite;
 }

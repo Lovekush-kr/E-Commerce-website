@@ -1,21 +1,29 @@
 /* Global Design Tokens & Base Styles */
 :root {
   /* Brand and Palette */
-  --color-ruby: #E0115F;
-  --color-tyrian: #66023C;
-  --color-bg: #090509;
-  --color-surface: #260017;
-  --color-surface-raised: #420027;
-  --color-magenta: #A00065;
-  --color-text: #F7F2F5;
-  --color-text-muted: #B8AEB5;
-  --color-border: #452035;
+  --color-ruby: #D4B483;
+  --color-tyrian: #D4B483;
+  --color-accent: #D4B483;
+  --color-accent-strong: #D4B483;
+  --color-bg: #101114;
+  --color-navbar: #141519;
+  --color-surface: #1C1D21;
+  --color-surface-raised: #27282D;
+  --color-magenta: #D4B483;
+  --color-text: #F5F5F5;
+  --color-text-muted: #A1A1AA;
+  --color-border: #303136;
   --color-success: #68B984;
-  --color-error: #FF6B83;
+  --color-error: #C75C5C;
   --color-black: #000000;
+  --color-accent-text: #101114;
+  --color-accent-ink: #101114;
+  --color-promo-start: #1C1D21;
+  --color-promo-end: #27282D;
+  --color-hover: #27282D;
 
   /* Typography */
-  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-sans: Inter, Manrope, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
   /* Spacing Scale */
   --space-xs: 4px;
@@ -34,7 +42,25 @@
   /* Layout */
   --container-max-width: 1240px;
   --transition-fast: 150ms ease;
-  --transition-normal: 200ms ease;
+  --transition-normal: 250ms ease;
+}
+
+:root[data-theme='light'] {
+  --color-bg: #F7F6F2;
+  --color-navbar: #FFFFFF;
+  --color-surface: #FFFFFF;
+  --color-surface-raised: #EEECE6;
+  --color-magenta: #A68A64;
+  --color-accent: #A68A64;
+  --color-accent-strong: #252525;
+  --color-text: #252525;
+  --color-text-muted: #737373;
+  --color-border: #E5E1D8;
+  --color-accent-text: #FFFFFF;
+  --color-accent-ink: #252525;
+  --color-promo-start: #EEECE6;
+  --color-promo-end: #F7F6F2;
+  --color-hover: #EEECE6;
 }
 
 /* CSS Reset & Defaults */
@@ -69,7 +95,7 @@ body {
 
 /* Accessible Focus States */
 :focus-visible {
-  outline: 2px solid var(--color-ruby);
+  outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }
 
@@ -138,12 +164,13 @@ img {
 }
 
 .btn-primary {
-  background-color: var(--color-ruby);
-  color: var(--color-text);
+  background-color: var(--color-accent-strong);
+  color: var(--color-accent-text);
 }
 
 .btn-primary:hover {
-  background-color: #c90e54;
+  background-color: var(--color-hover);
+  color: var(--color-text);
 }
 
 .btn-secondary {
@@ -154,16 +181,16 @@ img {
 
 .btn-secondary:hover {
   background-color: var(--color-surface-raised);
-  border-color: var(--color-magenta);
+  border-color: var(--color-accent);
 }
 
 .btn-brand {
-  background-color: var(--color-tyrian);
-  color: var(--color-text);
+  background-color: var(--color-accent-strong);
+  color: var(--color-accent-text);
 }
 
 .btn-brand:hover {
-  background-color: #7b0348;
+  background-color: var(--color-hover);
 }
 
 /* Card Surface Utility */
@@ -182,11 +209,72 @@ img {
   font-size: 0.75rem;
   font-weight: 600;
   border-radius: 999px;
-  background-color: var(--color-tyrian);
+  background-color: var(--color-surface-raised);
   color: var(--color-text);
+  border: 1px solid var(--color-border);
 }
 
 .badge-ruby {
-  background-color: var(--color-ruby);
-  color: #ffffff;
+  background-color: var(--color-accent);
+  color: var(--color-accent-ink);
+}
+
+/* Shared light theme surfaces and controls */
+:root[data-theme='light'] body {
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] body {
+  color-scheme: dark;
+}
+
+:root[data-theme='light'] .navbar-header {
+  background-color: rgba(255, 255, 255, 0.96);
+}
+
+:root[data-theme='light'] .hero-banner,
+:root[data-theme='light'] .catalog-header,
+:root[data-theme='light'] .cart-header,
+:root[data-theme='light'] .checkout-header {
+  background: linear-gradient(135deg, #EEECE6, #F7F6F2 78%);
+}
+
+:root[data-theme='light'] .home-promo-banner .promo-box {
+  background: linear-gradient(135deg, var(--color-promo-start), var(--color-promo-end));
+}
+
+:root[data-theme='light'] .card-image-wrap,
+:root[data-theme='light'] .item-thumb-link,
+:root[data-theme='light'] .gallery-main-frame,
+:root[data-theme='light'] .spec-item {
+  background-color: var(--color-bg);
+}
+
+:root[data-theme='light'] .form-demo-disclaimer {
+  background-color: var(--color-surface-raised);
+}
+
+:root[data-theme='light'] .btn-primary:hover {
+  background-color: var(--color-hover);
+}
+
+:root[data-theme='light'] .btn-brand:hover {
+  background-color: var(--color-hover);
+  color: var(--color-text);
+}
+
+html, body, #root, .navbar-header, .card-surface, .product-card, .category-card,
+.promo-box, .carousel-slide, .mobile-nav, input, select, textarea, button, a {
+  transition: color 250ms ease, background-color 250ms ease, border-color 250ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

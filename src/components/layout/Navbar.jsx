@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { useCart } from '../../context/CartContext'
 import { useAuth } from '../../context/AuthContext'
@@ -8,6 +8,13 @@ import './Navbar.css'
 function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [authModalOpen, setAuthModalOpen] = useState(false)
+  const [theme, setTheme] = useState(() => {
+    try {
+      return window.localStorage.getItem('aura_luxe_theme') === 'light' ? 'light' : 'dark'
+    } catch {
+      return 'dark'
+    }
+  })
 
   const { totalItems } = useCart()
   const { user, isLoggedIn, logout } = useAuth()
@@ -18,6 +25,19 @@ function Navbar() {
 
   const closeMobileMenu = () => {
     setMobileMenuOpen(false)
+  }
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme
+    try {
+      window.localStorage.setItem('aura_luxe_theme', theme)
+    } catch {
+      // The theme remains active for this visit if storage is unavailable.
+    }
+  }, [theme])
+
+  const toggleTheme = () => {
+    setTheme((current) => current === 'dark' ? 'light' : 'dark')
   }
 
   return (
@@ -50,6 +70,19 @@ function Navbar() {
 
           {/* Right side utilities: Cart & Mock Auth */}
           <div className="navbar-actions">
+            <button
+              type="button"
+              className="theme-toggle"
+              onClick={toggleTheme}
+              aria-label={`Switch to ${theme === 'dark' ? 'Light' : 'Dark'} Theme`}
+              title={`Switch to ${theme === 'dark' ? 'Light' : 'Dark'} Theme`}
+            >
+              <span aria-hidden="true">{theme === 'dark' ? '☼' : '☾'}</span>
+              <span className="theme-toggle-label">
+                Switch to {theme === 'dark' ? 'Light' : 'Dark'} Theme
+              </span>
+            </button>
+
             {/* Desktop Auth State */}
             <div className="desktop-auth-wrap">
               {isLoggedIn ? (

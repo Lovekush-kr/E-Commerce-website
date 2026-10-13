@@ -24,7 +24,7 @@
 
 .empty-cart-icon {
   font-size: 3rem;
-  color: var(--color-ruby);
+  color: var(--color-accent);
 }
 
 .empty-cart-title {
@@ -45,7 +45,7 @@
 
 /* Header */
 .cart-header {
-  background: radial-gradient(circle at 50% 0%, rgba(102, 2, 60, 0.4) 0%, rgba(9, 5, 9, 0.95) 80%);
+  background: radial-gradient(circle at 50% 0%, rgba(48, 49, 54, 0.4) 0%, rgba(16, 17, 20, 0.95) 80%);
   padding: var(--space-2xl) 0 var(--space-xl);
   border-bottom: 1px solid var(--color-border);
   text-align: center;
@@ -122,7 +122,7 @@
   grid-template-columns: 1fr;
   gap: var(--space-sm);
   padding: var(--space-md) 0;
-  border-bottom: 1px solid rgba(69, 32, 53, 0.4);
+  border-bottom: 1px solid rgba(48, 49, 54, 0.4);
   align-items: center;
 }
 
@@ -143,7 +143,7 @@
   width: 70px;
   height: 70px;
   flex-shrink: 0;
-  background-color: rgba(9, 5, 9, 0.8);
+  background-color: rgba(16, 17, 20, 0.8);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   overflow: hidden;
@@ -185,7 +185,7 @@
 }
 
 .item-title a:hover {
-  color: var(--color-ruby);
+  color: var(--color-accent);
 }
 
 .item-brand {
@@ -214,7 +214,7 @@
 }
 
 .item-total .total-val {
-  color: var(--color-ruby);
+  color: var(--color-accent);
 }
 
 /* Stepper */
@@ -243,7 +243,7 @@
 }
 
 .qty-btn:hover:not(:disabled) {
-  background-color: var(--color-tyrian);
+  background-color: var(--color-accent-strong);
 }
 
 .qty-btn:disabled {
@@ -283,7 +283,7 @@
 
 .remove-btn:hover {
   color: var(--color-error);
-  background-color: rgba(255, 107, 131, 0.1);
+  background-color: rgba(161, 161, 170, 0.1);
 }
 
 /* Card Footer */
@@ -377,7 +377,7 @@
 }
 
 .total-amount {
-  color: var(--color-ruby);
+  color: var(--color-accent);
   font-weight: 800;
   font-size: 1.4rem;
 }
@@ -394,7 +394,7 @@
   font-size: 1rem;
   font-weight: 700;
   text-align: center;
-  box-shadow: 0 4px 14px rgba(224, 17, 95, 0.35);
+  box-shadow: 0 4px 14px rgba(166, 138, 100, 0.35);
 }
 
 .summary-note {
@@ -409,7 +409,7 @@
   flex-direction: column;
   gap: var(--space-sm);
   padding-top: var(--space-md);
-  border-top: 1px solid rgba(69, 32, 53, 0.4);
+  border-top: 1px solid rgba(48, 49, 54, 0.4);
   font-size: 0.8rem;
   color: var(--color-text-muted);
 }
